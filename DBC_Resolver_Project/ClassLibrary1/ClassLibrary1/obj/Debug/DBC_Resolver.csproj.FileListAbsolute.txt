@@ -1,0 +1,10 @@
+c:\users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+c:\users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+c:\users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\DBC_Resolver.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+c:\users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+C:\Users\user\Documents\GitHub\CAN_Analysis_Tool\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Documents\GitHub\CAN_Analysis_Tool\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Documents\GitHub\CAN_Analysis_Tool\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\DBC_Resolver.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\GitHub\CAN_Analysis_Tool\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\user\Documents\GitHub\CAN_Analysis_Tool\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

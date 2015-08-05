@@ -1,0 +1,8 @@
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\bin\Debug\DBCResolver_TestConsole.exe.config
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\bin\Debug\DBCResolver_TestConsole.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\bin\Debug\DBCResolver_TestConsole.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\bin\Debug\ClassLibrary1.dll
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\bin\Debug\ClassLibrary1.pdb
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\obj\Debug\DBCResolver_TestConsole.csprojResolveAssemblyReference.cache
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\obj\Debug\DBCResolver_TestConsole.exe
+C:\Users\user\Documents\Visual Studio 2013\Projects\DBC_Resolver_Project\ConsoleTest\DBCResolver_TestConsole\obj\Debug\DBCResolver_TestConsole.pdb

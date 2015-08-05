@@ -1,0 +1,5 @@
+C:\Users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Release\ClassLibrary1.dll
+C:\Users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\bin\Release\ClassLibrary1.pdb
+C:\Users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Release\DBC_Resolver.csprojResolveAssemblyReference.cache
+C:\Users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Release\ClassLibrary1.dll
+C:\Users\user\documents\visual studio 2013\Projects\DBC_Resolver_Project\ClassLibrary1\ClassLibrary1\obj\Release\ClassLibrary1.pdb
