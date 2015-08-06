@@ -72,6 +72,7 @@
             this.tsbTestStart = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbReport = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dbcTreeView = new Fengyuan.CATTreeView.CatTreeView();
@@ -87,9 +88,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -105,6 +106,10 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.consoleTextBox = new System.Windows.Forms.TextBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.catlistView = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.belongedMsg = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -131,6 +136,9 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.listViewCtxMenu.SuspendLayout();
             this.toolStripContainer2.ContentPanel.SuspendLayout();
             this.toolStripContainer2.TopToolStripPanel.SuspendLayout();
@@ -398,7 +406,8 @@
             this.tsbDBC,
             this.tsbTestStart,
             this.toolStripSeparator3,
-            this.tsbReport});
+            this.tsbReport,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1003, 25);
@@ -475,11 +484,13 @@
             // tsbTestStart
             // 
             this.tsbTestStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbTestStart.Enabled = false;
             this.tsbTestStart.Image = ((System.Drawing.Image)(resources.GetObject("tsbTestStart.Image")));
             this.tsbTestStart.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbTestStart.Name = "tsbTestStart";
             this.tsbTestStart.Size = new System.Drawing.Size(23, 22);
             this.tsbTestStart.Text = "启动测试";
+            this.tsbTestStart.Click += new System.EventHandler(this.tsbTestStart_Click);
             // 
             // toolStripSeparator3
             // 
@@ -495,6 +506,16 @@
             this.tsbReport.Size = new System.Drawing.Size(23, 22);
             this.tsbReport.Text = "打开测试报告";
             this.tsbReport.Click += new System.EventHandler(this.tsbReport_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // statusStrip1
             // 
@@ -591,10 +612,10 @@
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.Sienna;
-            this.splitContainer2.Panel2.Controls.Add(this.catlistView);
+            this.splitContainer2.Panel2.BackColor = System.Drawing.Color.MistyRose;
+            this.splitContainer2.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer2.Size = new System.Drawing.Size(778, 489);
-            this.splitContainer2.SplitterDistance = 329;
+            this.splitContainer2.SplitterDistance = 290;
             this.splitContainer2.TabIndex = 0;
             // 
             // gTabControl
@@ -612,7 +633,7 @@
             this.gTabControl.Name = "gTabControl";
             this.gTabControl.SelectedIndex = 0;
             this.gTabControl.ShowToolTips = true;
-            this.gTabControl.Size = new System.Drawing.Size(778, 329);
+            this.gTabControl.Size = new System.Drawing.Size(778, 290);
             this.gTabControl.TabIndex = 0;
             this.gTabControl.Visible = false;
             // 
@@ -635,9 +656,9 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.pictureBox2);
@@ -652,7 +673,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(770, 302);
+            this.tabPage1.Size = new System.Drawing.Size(770, 263);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GlobalExample";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -683,6 +704,13 @@
             this.textBox2.Size = new System.Drawing.Size(83, 21);
             this.textBox2.TabIndex = 15;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(109, 219);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(83, 21);
+            this.textBox1.TabIndex = 12;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -700,13 +728,6 @@
             this.label6.Size = new System.Drawing.Size(17, 12);
             this.label6.TabIndex = 13;
             this.label6.Text = "ms";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(109, 219);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 21);
-            this.textBox1.TabIndex = 12;
             // 
             // label5
             // 
@@ -826,7 +847,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(770, 302);
+            this.tabPage2.Size = new System.Drawing.Size(770, 263);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Message Time Out";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -837,7 +858,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(770, 302);
+            this.tabPage3.Size = new System.Drawing.Size(770, 263);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Check Error";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -848,7 +869,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(770, 302);
+            this.tabPage4.Size = new System.Drawing.Size(770, 263);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "DLC Error";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -859,7 +880,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 23);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(770, 302);
+            this.tabPage5.Size = new System.Drawing.Size(770, 263);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Message Count Error";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -870,10 +891,55 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 23);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(770, 302);
+            this.tabPage6.Size = new System.Drawing.Size(770, 263);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Alt-bit Error";
             this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(778, 195);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.consoleTextBox);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(770, 169);
+            this.tabPage7.TabIndex = 0;
+            this.tabPage7.Text = "Console";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // consoleTextBox
+            // 
+            this.consoleTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.consoleTextBox.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.consoleTextBox.Location = new System.Drawing.Point(3, 3);
+            this.consoleTextBox.Multiline = true;
+            this.consoleTextBox.Name = "consoleTextBox";
+            this.consoleTextBox.ReadOnly = true;
+            this.consoleTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.consoleTextBox.Size = new System.Drawing.Size(764, 163);
+            this.consoleTextBox.TabIndex = 0;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.catlistView);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(770, 169);
+            this.tabPage8.TabIndex = 1;
+            this.tabPage8.Text = "信号列表";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // catlistView
             // 
@@ -886,9 +952,9 @@
             this.catlistView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.catlistView.FullRowSelect = true;
             this.catlistView.LabelEdit = true;
-            this.catlistView.Location = new System.Drawing.Point(0, 0);
+            this.catlistView.Location = new System.Drawing.Point(3, 3);
             this.catlistView.Name = "catlistView";
-            this.catlistView.Size = new System.Drawing.Size(778, 156);
+            this.catlistView.Size = new System.Drawing.Size(764, 163);
             this.catlistView.TabIndex = 0;
             this.catlistView.UseCompatibleStateImageBehavior = false;
             this.catlistView.View = System.Windows.Forms.View.Details;
@@ -992,6 +1058,10 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
             this.listViewCtxMenu.ResumeLayout(false);
             this.toolStripContainer2.ContentPanel.ResumeLayout(false);
             this.toolStripContainer2.TopToolStripPanel.ResumeLayout(false);
@@ -1043,11 +1113,8 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer2;
         private System.Windows.Forms.ToolStripButton tsbStartCanoe;
         public Fengyuan.CATTreeView.CatTreeView dbcTreeView;
-        private System.Windows.Forms.TabControl gTabControl;
         private System.Windows.Forms.ContextMenuStrip tabContextMenu;
         private System.Windows.Forms.ToolStripMenuItem tabCxtMenuClose;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ListView catlistView;
         private System.Windows.Forms.ToolStripMenuItem menuCanoe;
         private System.Windows.Forms.ToolStripMenuItem menuCanoeStart;
@@ -1063,21 +1130,6 @@
         private System.Windows.Forms.ToolStripMenuItem listViewCtxDelete;
         private System.Windows.Forms.ToolStripMenuItem menuCANoePath;
         private System.Windows.Forms.ToolStripButton tsbTestStart;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxPlatform;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbxChannel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem delDbcTreeCxt;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbReport;
@@ -1086,11 +1138,34 @@
         private System.Windows.Forms.ToolStripMenuItem 配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 属性ToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingCat;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.TabControl gTabControl;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ComboBox cbxChannel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxPlatform;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TextBox consoleTextBox;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.TabPage tabPage8;
     }
 }
 

@@ -35,6 +35,8 @@ namespace Fengyuan.CatForm
         {
             InitializeComponent();
 
+            ConsoleWriteLine("..........................CAT启动成功！..........................");
+            ConsoleWriteLine("..........................欢迎使用CAT！..........................");
         }
 
         /// <summary>
@@ -135,6 +137,10 @@ namespace Fengyuan.CatForm
                     mItem.PerformClick();
             }
         }
+
+
+
+
 
         /// <summary>
         /// 创建新的CAT工程
@@ -276,6 +282,7 @@ namespace Fengyuan.CatForm
 
                     catlistView.Items.Add(item);
                     signalNode.IsAddedToListView = true;
+                    
                 }
 
             }
@@ -423,7 +430,11 @@ namespace Fengyuan.CatForm
             
 
         }
-
+        /// <summary>
+        /// 启动CANoe软件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void menuCanoeStart_Click(object sender, EventArgs e)
         {
             if (_canoeFilePath == null)
@@ -438,7 +449,7 @@ namespace Fengyuan.CatForm
                 mCANoeApp = new CANoe.Application();
 
                 // Init measurement object.
-                mCANoeMeasurement = (CANoe.Measurement)mCANoeApp.Measurement;
+                mCANoeMeasurement = mCANoeApp.Measurement;
 
                 // Stopps a running measurement.
                 if (mCANoeMeasurement.Running)
@@ -554,6 +565,53 @@ namespace Fengyuan.CatForm
         {
             this.gTabControl.Visible = false;
         }
+
+        private void tsbTestStart_Click(object sender, EventArgs e)
+        {
+            if (mCANoeMeasurement != null)
+            {
+                //启动CANoe工作
+                if (!mCANoeMeasurement.Running)
+                {
+                    mCANoeMeasurement.Start();
+
+
+                    //显示CANoe Measurement启动结果
+                    string result = mCANoeMeasurement.Running ? "成功!" : "失败!";
+                    MessageBox.Show("工程启动" + result); // TODO XIANSHI
+
+
+                }
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ConsoleWriteLine("hello");
+        }
+
+        /*----------------------------------------------------------------
+         * Console控制台的功能方法
+         * ---------------------------------------------------------------
+         */
+
+        /// <summary>
+        /// 向CAT的Console写一行字符串内容。写完自动换行。
+        /// </summary>
+        /// <param name="text"></param>
+        private void ConsoleWriteLine(string text)
+        {
+            consoleTextBox.AppendText(text+"\n");
+        }
+
+        /// <summary>
+        /// 清除Console内所有内容。
+        /// </summary>
+        private void ConsoleClrAll()
+        {
+            consoleTextBox.Clear();
+        }
+
 
     }
 }/*-----------End--------------*/
