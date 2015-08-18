@@ -35,21 +35,21 @@ namespace Fengyuan.CatForm
             if (mCANoeApp != null)
             {
                 
-                mCANoeApp.OnQuit += new CANoe._IApplicationEvents_OnQuitEventHandler(CANoeQuit); //注册退出事件
+              //  mCANoeApp.OnQuit += new CANoe._IApplicationEvents_OnQuitEventHandler(CANoeQuit); //注册退出事件
 
             }
 
             if (mCANoeMeasurement != null)
             {
 
-                mCANoeMeasurement.OnInit += new CANoe._IMeasurementEvents_OnInitEventHandler(MeasurementInitiated); //注册measurement初始化事件
+             //   mCANoeMeasurement.OnInit += new CANoe._IMeasurementEvents_OnInitEventHandler(MeasurementInitiated); //注册measurement初始化事件
             }
 
 
 
         }
 
-        private void 
+        
 
     }
 }

@@ -75,7 +75,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dbcTreeView = new Fengyuan.CATTreeView.CatTreeView();
             this.treeCxtMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.addSignalCtxMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.delDbcTreeCxt = new System.Windows.Forms.ToolStripMenuItem();
@@ -120,6 +119,7 @@
             this.属性ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer2 = new System.Windows.Forms.ToolStripContainer();
             this.bindingCat = new System.Windows.Forms.BindingSource(this.components);
+            this.dbcTreeView = new Fengyuan.CATTreeView.CatTreeView();
             this.catMenuStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -206,14 +206,14 @@
             // menuFileLoadProject
             // 
             this.menuFileLoadProject.Name = "menuFileLoadProject";
-            this.menuFileLoadProject.Size = new System.Drawing.Size(125, 22);
+            this.menuFileLoadProject.Size = new System.Drawing.Size(152, 22);
             this.menuFileLoadProject.Text = "工程...";
             // 
             // menuFileLoadDbc
             // 
             this.menuFileLoadDbc.Image = ((System.Drawing.Image)(resources.GetObject("menuFileLoadDbc.Image")));
             this.menuFileLoadDbc.Name = "menuFileLoadDbc";
-            this.menuFileLoadDbc.Size = new System.Drawing.Size(125, 22);
+            this.menuFileLoadDbc.Size = new System.Drawing.Size(152, 22);
             this.menuFileLoadDbc.Text = "DBC文件";
             this.menuFileLoadDbc.Click += new System.EventHandler(this.menuFileLoadDbc_Click);
             // 
@@ -305,14 +305,14 @@
             // menuCanoeStart
             // 
             this.menuCanoeStart.Name = "menuCanoeStart";
-            this.menuCanoeStart.Size = new System.Drawing.Size(109, 22);
+            this.menuCanoeStart.Size = new System.Drawing.Size(152, 22);
             this.menuCanoeStart.Text = "启动";
             this.menuCanoeStart.Click += new System.EventHandler(this.menuCanoeStart_Click);
             // 
             // menuCANoePath
             // 
             this.menuCANoePath.Name = "menuCANoePath";
-            this.menuCANoePath.Size = new System.Drawing.Size(109, 22);
+            this.menuCANoePath.Size = new System.Drawing.Size(152, 22);
             this.menuCANoePath.Text = "路径...";
             this.menuCANoePath.Click += new System.EventHandler(this.menuCANoePath_Click);
             // 
@@ -484,7 +484,6 @@
             // tsbTestStart
             // 
             this.tsbTestStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbTestStart.Enabled = false;
             this.tsbTestStart.Image = ((System.Drawing.Image)(resources.GetObject("tsbTestStart.Image")));
             this.tsbTestStart.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbTestStart.Name = "tsbTestStart";
@@ -542,22 +541,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(1003, 489);
             this.splitContainer1.SplitterDistance = 221;
             this.splitContainer1.TabIndex = 3;
-            // 
-            // dbcTreeView
-            // 
-            this.dbcTreeView.BackColor = System.Drawing.Color.SeaShell;
-            this.dbcTreeView.ContextMenuStrip = this.treeCxtMenu;
-            this.dbcTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dbcTreeView.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.dbcTreeView.ImageIndex = 0;
-            this.dbcTreeView.ImageList = this.catTreeImageList;
-            this.dbcTreeView.Location = new System.Drawing.Point(0, 0);
-            this.dbcTreeView.Name = "dbcTreeView";
-            this.dbcTreeView.SelectedImageIndex = 0;
-            this.dbcTreeView.ShowNodeToolTips = true;
-            this.dbcTreeView.Size = new System.Drawing.Size(221, 489);
-            this.dbcTreeView.TabIndex = 0;
-            this.dbcTreeView.DoubleClick += new System.EventHandler(this.dbcTreeView_DoubleClick);
             // 
             // treeCxtMenu
             // 
@@ -1024,6 +1007,23 @@
             // toolStripContainer2.TopToolStripPanel
             // 
             this.toolStripContainer2.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            // 
+            // dbcTreeView
+            // 
+            this.dbcTreeView.BackColor = System.Drawing.Color.SeaShell;
+            this.dbcTreeView.ContextMenuStrip = this.treeCxtMenu;
+            this.dbcTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dbcTreeView.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dbcTreeView.ImageIndex = 0;
+            this.dbcTreeView.ImageList = this.catTreeImageList;
+            this.dbcTreeView.Location = new System.Drawing.Point(0, 0);
+            this.dbcTreeView.Name = "dbcTreeView";
+            this.dbcTreeView.SelectedImageIndex = 0;
+            this.dbcTreeView.ShowNodeToolTips = true;
+            this.dbcTreeView.Size = new System.Drawing.Size(221, 489);
+            this.dbcTreeView.TabIndex = 0;
+            this.dbcTreeView.DoubleClick += new System.EventHandler(this.dbcTreeView_DoubleClick);
+            this.dbcTreeView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dbcTreeView_MouseClick);
             // 
             // CatForm
             // 

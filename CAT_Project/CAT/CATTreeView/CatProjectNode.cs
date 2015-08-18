@@ -12,11 +12,17 @@ namespace Fengyuan.CATTreeView
     {
         private CatFaultParentNode _faultParentNode;
         private TreeNode _dbcNode;
-
+        private TreeNode _ascNode;
 
         public CatFaultParentNode FaultParentNode
         {
             get { return _faultParentNode; }
+        }
+
+
+        public TreeNode AscNode
+        {
+            get { return _ascNode; } 
         }
 
         public TreeNode DbcNode
@@ -34,7 +40,16 @@ namespace Fengyuan.CATTreeView
             this.ExpandAll();
             this.ImageKey = "project";
             this.SelectedImageKey = "project";
-            //this.
+
+            //
+            _ascNode = new TreeNode();
+            this.Nodes.Add(_ascNode);
+            _ascNode.Text = "ASC文件";
+
+
+            
+
+
         }
 
         public CatFaultParentNode CreateChildNodes()

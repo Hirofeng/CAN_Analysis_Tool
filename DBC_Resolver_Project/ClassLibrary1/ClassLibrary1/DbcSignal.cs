@@ -8,7 +8,7 @@ namespace Fengyuan.DBCResolver
 {
     public class DbcSignal
     {
-        private int _rawValue;
+        private ushort _rawValue;
         private string  _name;
         //private char _multIndicator;//'m'= multiplexer_switch_value
         private byte _startBit;
@@ -20,6 +20,12 @@ namespace Fengyuan.DBCResolver
         private double _minimum;
         private double _maximum;
 
+
+        public ushort RawValue
+        {
+            get { return _rawValue; }
+            set { _rawValue = value; }
+        }
 
         /// <summary>
         /// 信号名称属性

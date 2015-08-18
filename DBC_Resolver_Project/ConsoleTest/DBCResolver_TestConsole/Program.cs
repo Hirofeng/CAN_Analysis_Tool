@@ -10,11 +10,23 @@ namespace DBCResolver_TestConsole
     {
         static void Main(string[] args)
         {
+            byte[] datas = {0xB4,0XE5,0x93};
+            DbcMessage msg = new DbcMessage("MESSAGE");
 
-            DbcManager manager = new DbcManager(@"C:\Users\user\Desktop\CAN.dbc");
-            manager.DisplayDbc2Console();
 
 
+
+           DbcSignal signal = msg.Add("signal1 ");
+            signal.StartBit = 0;
+            signal.Size = 4;
+
+            DbcSignal signal1 = msg.Add("signal2 ");
+            signal1.StartBit = 8;
+            signal1.Size = 9;
+
+         //   msg.Add("signal2");
+          //  msg.Add("signal3");
+            msg.AddMessageDatas(datas, 3);
             Console.ReadKey();
         }
     }

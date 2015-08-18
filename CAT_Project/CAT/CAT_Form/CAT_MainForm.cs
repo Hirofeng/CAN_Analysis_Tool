@@ -10,6 +10,7 @@ using Fengyuan.DBCResolver;
 using Fengyuan.CATTreeView;
 using Fengyuan.CatDialogForms;
 using System.IO;
+using System.Threading;
 using Fengyuan.CatAnalyzer;
 namespace Fengyuan.CatForm
 {
@@ -34,7 +35,7 @@ namespace Fengyuan.CatForm
         public CatForm()
         {
             InitializeComponent();
-
+          // Control.CheckForIllegalCrossThreadCalls = false;
             ConsoleWriteLine("..........................CAT启动成功！..........................");
             ConsoleWriteLine("..........................欢迎使用CAT！..........................");
         }
@@ -164,6 +165,9 @@ namespace Fengyuan.CatForm
                     CatFaultNode node = pNode.FaultParentNode.Nodes[i] as CatFaultNode;
                     node.FalutTabPage = gTabControl.TabPages[i];
                 }
+
+
+                
 
                     //显示TabPages
                 this.gTabControl.Visible = true;
@@ -390,11 +394,24 @@ namespace Fengyuan.CatForm
   
 
         }
-
+        //TODO TreeView上下文菜单
         private void addSignalCtxMenu_Click(object sender, EventArgs e)
         {
-     
-         
+
+            if ( this.dbcTreeView.SelectedNode.Text == "ASC文件")
+            {
+                OpenFileDialog dlg = new OpenFileDialog();
+                dlg.Title = "请添加.asc文件";
+                dlg.Filter = "ASC files (*.asc)|*.asc";
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    TreeNode node = new TreeNode();
+                    this.dbcTreeView.SelectedNode.Nodes.Add(node);
+                    node.Text = dlg.FileName;
+                }
+                dlg.Dispose();
+            }
+          
         }
         
         private void listViewCtxDelete_Click(object sender, EventArgs e)
@@ -459,9 +476,10 @@ namespace Fengyuan.CatForm
 
                 if (mCANoeApp != null)
                 {
+                    
                     // Open the demo configuration.
                     mCANoeApp.Open(_canoeFilePath, true, true);
-
+                   
                     // Make sure the configuration was successfully loaded.
                     CANoe.OpenConfigurationResult ocresult = mCANoeApp.Configuration.OpenConfigurationResult;
                     if (ocresult.result == 0)
@@ -587,7 +605,7 @@ namespace Fengyuan.CatForm
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            ConsoleWriteLine("hello");
+            ConsoleLoadDot();
         }
 
         /*----------------------------------------------------------------
@@ -610,6 +628,41 @@ namespace Fengyuan.CatForm
         private void ConsoleClrAll()
         {
             consoleTextBox.Clear();
+        }
+
+
+
+
+        private void ConsoleLoadDot()
+        {
+            int dotNum = 10;
+                                                                    //TODO 这里其实是委托UI线程来操纵控件
+            this.consoleTextBox.BeginInvoke(new Action(() =>
+            {
+                consoleTextBox.AppendText("正在打开CANoe");
+            }));
+            
+            for (;;)
+            {
+                this.consoleTextBox.BeginInvoke(new Action(() =>
+                {
+                    consoleTextBox.AppendText(" .");
+                }));
+                    
+                Thread.Sleep(10);
+                     
+            }
+        }
+        //TODO TreeView右键事件
+        private void dbcTreeView_MouseClick(object sender, MouseEventArgs e)
+        {
+            Point point = new Point(e.X,e.Y);
+            TreeNode tn = this.dbcTreeView.GetNodeAt(point);
+            this.dbcTreeView.SelectedNode = tn;
+            if (e.Button == MouseButtons.Right)
+            {
+                treeCxtMenu.Show(this.dbcTreeView.PointToScreen(point));
+            }
         }
 
 

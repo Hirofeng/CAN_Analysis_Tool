@@ -31,6 +31,12 @@ namespace Fengyuan.CatForm
             set;
         }
 
+        public string AscPath
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// 引用一个GlobatTimeout监控器
         /// </summary>

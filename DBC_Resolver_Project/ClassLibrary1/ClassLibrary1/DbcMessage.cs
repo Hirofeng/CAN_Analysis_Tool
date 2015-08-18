@@ -38,6 +38,40 @@ namespace Fengyuan.DBCResolver
         }
 
 
+        //TODO 存入CAN data,计算所包含的每个消息的值
+        public void AddMessageDatas(byte[] datas,byte length)
+        {
+            foreach (DbcSignal signal in base.Items)
+            {
+                signal.RawValue = 0;
+                for (byte i = 0; i < signal.Size; i++)
+                {
+                    signal.RawValue |= (ushort)(GetBitValue(datas, (byte)(signal.StartBit + i)) << (signal.Size - i - 1));
+                    
+                }
+                Console.WriteLine(signal.SignalName + signal.RawValue);
+            }
+            
+        }
+
+       
+
+        private byte GetBitValue(byte[] datas, byte bitPosition)
+        {
+            byte dataIndex;
+            byte bitIndex;
+            byte temp;
+            dataIndex = (byte)(bitPosition/8);
+            bitIndex = (byte)(7 - (bitPosition%8));
+            temp = (byte) (datas[dataIndex] >> bitIndex);
+            return (byte)(temp & 0x01);
+
+        }
+
+
+
+
+
         public DbcMessage(string name)
         {
             _name = name;
@@ -49,6 +83,12 @@ namespace Fengyuan.DBCResolver
             DbcSignal signalObject = new DbcSignal(signalName);
             base.Add(signalObject);
             return signalObject;
+        }
+
+
+        public new void Add(DbcSignal signal)
+        {
+            base.Add(signal);
         }
 
 
